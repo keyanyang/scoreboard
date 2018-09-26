@@ -18,7 +18,7 @@ def _get_url(url):
     return response
 
 
-def _convert_json(data_json, game_state):
+def _convert_live_json(data_json, game_state):
     """
     return list
     """
@@ -26,20 +26,21 @@ def _convert_json(data_json, game_state):
     for day in data_json['dates']:
         for game in day['games']:
             if game['status']['abstractGameState'] == game_state:
-                games_list.append([game['teams']['away']['team']['name'],
-                                  str(game['teams']['away']['score']),
-                                  game['teams']['home']['team']['name'],
-                                  str(game['teams']['home']['score'])
+                games_list.append([game['gamePk'],
+                                   game['teams']['away']['team']['name'],
+                                   str(game['teams']['away']['score']),
+                                   game['teams']['home']['team']['name'],
+                                   str(game['teams']['home']['score'])
                                   ])
     return games_list
 
 
-def get_data(url, game_state):
+def get_game_data(url, game_state):
     """
     return list
     """
     response = _get_url(url)
-    return _convert_json(json.loads(response.text), game_state)
+    return _convert_live_json(json.loads(response.text), game_state)
 
 
 def display(games_list):
@@ -47,3 +48,22 @@ def display(games_list):
     for g in games_list:
         text_display += g[0] + ' (' + g[1] + ') at ' + g[2] + ' (' + g[3] + ')\n'
     return text_display
+
+
+def _convert_content_json(data_json):
+    """
+    return dict
+    """
+    live_content = {}
+    last_item = data_json['highlights']['live']['items'][-1]
+    live_content['description'] = last_item['description']
+    live_content['img_url'] = last_item['image']['cuts'][-1]['src']
+    return live_content
+
+
+def get_live_content(url):
+    """
+    return list
+    """
+    response = _get_url(url)
+    return _convert_content_json(json.loads(response.text))
