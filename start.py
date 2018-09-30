@@ -75,13 +75,16 @@ def main():
 
                     img_flow.appendleft(description_img_url)
 
-            if len(img_flow) == 1:
+            if not img_flow:
+                current_img = ''
+            elif len(img_flow) == 1:
                 current_img = draw(img_flow[0])
             else:
                 current_img = draw(img_flow.pop())
             start_time = time.time()
 
         if not mlb_lives_games:
+            print("No game in progress. Existing now.")
             time.sleep(3)
             return
         put_cursor(0,0)
