@@ -18,7 +18,7 @@ def _get_url(url):
     return response
 
 
-def _convert_live_json(data_json, game_state):
+def _convert_schedule_json(data_json, game_state):
     """
     return list
     """
@@ -40,14 +40,7 @@ def get_game_data(url, game_state):
     return list
     """
     response = _get_url(url)
-    return _convert_live_json(json.loads(response.text), game_state)
-
-
-def display(games_list):
-    text_display = ""
-    for g in games_list:
-        text_display += g[0] + ' (' + g[1] + ') at ' + g[2] + ' (' + g[3] + ')\n'
-    return text_display
+    return _convert_schedule_json(json.loads(response.text), game_state)
 
 
 def _convert_content_json(data_json):
@@ -55,10 +48,20 @@ def _convert_content_json(data_json):
     return dict
     """
     live_content = {}
-    last_item = data_json['highlights']['live']['items'][-1]
-    live_content['description'] = last_item['description']
-    live_content['img_url'] = last_item['image']['cuts'][-1]['src']
-    return live_content
+    items = data_json['highlights']['live']['items']
+    if not items:
+        return {}
+    else:
+        last_item = items[-1]
+        live_content['media_id'] = last_item['id']
+        live_content['kicker'] = last_item['kicker']
+        live_content['description'] = last_item['description']
+
+        for cut in last_item['image']['cuts']:
+            if cut['width'] >= 400 and cut['width'] <= 750 and cut['height'] >= 300 and cut['height']<=440:
+                live_content['img_url'] = cut['src']
+                return live_content
+        return {}
 
 
 def get_live_content(url):
@@ -67,3 +70,18 @@ def get_live_content(url):
     """
     response = _get_url(url)
     return _convert_content_json(json.loads(response.text))
+
+
+def _convert_live_json(data_json):
+    """
+    return dict
+    """
+    return data_json['liveData']['play']['currentPlay']['result']['description']
+
+
+def get_current_play(url):
+    """
+    return str
+    """
+    response = _get_url(url)
+    return _convert_live_json(json.loads(response.text))

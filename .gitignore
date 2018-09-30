@@ -61,3 +61,6 @@ target/
 # Pipenv
 Pipfile
 Pipfile.lock
+
+# img
+img_cache/

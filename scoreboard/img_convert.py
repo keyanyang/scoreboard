@@ -23,7 +23,8 @@ def _convert_index(x):
     if x == 7: return 7
 
 
-def draw(img_path):
+def draw(img_display):
+    img_path = "./scoreboard/img_cache/{}.jpg".format(img_display['media_id'])
     img = Image.open(img_path)
     start = 0x2800
     char_width = 10
@@ -32,7 +33,8 @@ def draw(img_path):
     char_width_divided, char_height_divided = round(char_width / 2), round(char_height / 4)
     # match = lambda a, b: a < b 
     match = lambda a, b: a > b
-    image = ""
+    image = img_display['kicker'] + '\n'
+    image += img_display['description'] + '\n'
     for y in range(0, img.height - char_height - 1, char_height):
         for x in range(0, img.width - char_width - 1, char_width):
             byte, index = 0x0, 0
