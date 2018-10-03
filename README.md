@@ -3,7 +3,7 @@ width="50"
 align="right"/>
 
 # Sports Live in Terminal
-Checking live game score and highlights in terminal 
+Checking live game score and real time highlights in terminal 
 
 ## :baseball: MLB
 <img src="https://user-images.githubusercontent.com/22522811/46264978-22766f80-c4d7-11e8-8e16-1dba8c0492d3.png"

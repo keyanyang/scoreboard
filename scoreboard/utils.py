@@ -72,6 +72,35 @@ def get_live_content(url):
     return _convert_content_json(json.loads(response.text))
 
 
+def _convert_nhl_content_json(data_json):
+    """
+    return dict
+    """
+    live_content = {}
+    items = data_json['editorial']['recap']['items']
+    if not items:
+        return {}
+    else:
+        last_item = items[-1]
+        live_content['media_id'] = last_item['id']
+        live_content['kicker'] = last_item['headline']
+        live_content['description'] = last_item['seoDescription']
+
+        for cut in last_item['media']['cuts']:
+            if cut['width'] >= 400 and cut['width'] <= 750 and cut['height'] >= 300 and cut['height']<=440:
+                live_content['img_url'] = cut['src']
+                return live_content
+        return {}
+
+
+def get_nhl_live_content(url):
+    """
+    return list
+    """
+    response = _get_url(url)
+    return _convert_nhl_content_json(json.loads(response.text))
+
+
 def _convert_live_json(data_json):
     """
     return dict
