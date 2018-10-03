@@ -1,9 +1,9 @@
-<img src="https://user-images.githubusercontent.com/22522811/46264736-c27ec980-c4d4-11e8-8bf2-a20e94e9dd31.jpg" 
-width="50"
-align="right"/>
+<img src="https://user-images.githubusercontent.com/22522811/46388088-1decbb00-c67f-11e8-8848-a5afcbf054ba.jpg"
+width="500">
 
-### Sports Live in Terminal
 [![Build Status](https://travis-ci.org/keyanyang/scoreboard.svg?branch=master)](https://travis-ci.org/keyanyang/scoreboard)
+
+# Sports Live in Terminal
 Checking live game score and real time highlights in terminal 
 
 ## :baseball: MLB
