@@ -2,7 +2,8 @@
 width="50"
 align="right"/>
 
-# Sports Live in Terminal
+### Sports Live in Terminal
+[![Build Status](https://travis-ci.org/keyanyang/scoreboard.svg?branch=master)](https://travis-ci.org/keyanyang/scoreboard)
 Checking live game score and real time highlights in terminal 
 
 ## :baseball: MLB
