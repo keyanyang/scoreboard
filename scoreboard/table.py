@@ -3,6 +3,7 @@ from colorclass import Color
 
 
 team_color = {
+    # MLB
     "Oakland Athletics": Color('{bggreen}{hiyellow}Oakland Athletics{/hiyellow}{/bggreen}'),
     "Pittsburgh Pirates": Color('{hibgyellow}{black}Pittsburgh Pirates{/black}{/hibgyellow}'),
     "San Diego Padres": Color('{bgblack}{hiblue}San Diego Padres{/hiblue}{/bgblack}'),
@@ -42,31 +43,31 @@ team_color = {
     "New York Mets": Color('{hibgblue}{yellow}New York Mets{/yellow}{/hibgblue}'),
 
 
+    # NHL
+    "Boston Bruins": Color('{bggreen}{hiyellow}Boston Bruins{/hiyellow}{/bggreen}'),
+    "Buffalo Sabres": Color('{hibgyellow}{black}Buffalo Sabres{/black}{/hibgyellow}'),
+    "Detroit Red Wings": Color('{bgblack}{hiblue}Detroit Red Wings{/hiblue}{/bgblack}'),
+    "Florida Panthers": Color('{hibggreen}{black}Florida Panthers{/black}{/hibggreen}'),
 
-    "Boston Bruins": Color('{bggreen}{hiyellow}Boston Bruins{/hiyellow}{/bggreen}'), #
-    "Buffalo Sabres": Color('{hibgyellow}{black}Buffalo Sabres{/black}{/hibgyellow}'), #
-    "Detroit Red Wings": Color('{bgblack}{hiblue}Detroit Red Wings{/hiblue}{/bgblack}'), # 
-    "Florida Panthers": Color('{hibggreen}{black}Florida Panthers{/black}{/hibggreen}'), #
+    "Montreal Canadiens": Color('{bgyellow}{black}Montreal Canadiens{/black}{/bgyellow}'),
+    "Ottawa Senators": Color('{hibgred}{black}Ottawa Senators{/black}{/hibgred}'),
+    "Tampa Bay Lightning": Color('{bgblue}{hiblue}Tampa Bay Lightning{/bgblue}{/bgblack}'),
+    "Toronto Maple Leafs": Color('{bgblue}{hired}Toronto Maple Leafs{/hired}{/bgblue}'),
 
-    "Montreal Canadiens": Color('{bgyellow}{black}Montreal Canadiens{/black}{/bgyellow}'), #
-    "Ottawa Senators": Color('{hibgred}{black}Ottawa Senators{/black}{/hibgred}'), #
-    "Tampa Bay Lightning": Color('{bgblue}{hiblue}Tampa Bay Lightning{/bgblue}{/bgblack}'), #
-    "Toronto Maple Leafs": Color('{bgblue}{hired}Toronto Maple Leafs{/hired}{/bgblue}'), #
+    "Carolina Hurricanes": Color('{hibgred}{black}Carolina Hurricanes{/black}{/hibgred}'), #
+    "Columbus Blue Jackets": Color('{hibgblue}{hired}Columbus Blue Jackets{/hired}{/hibgblue}'),
+    "New Jersey Devils": Color('{hibgwhite}{hired}New Jersey Devils{/hired}{/hibgwhite}'),
+    "New York Islanders": Color('{bgred}{white}New York Islanders{/white}{/bgred}'),
 
-    "Carolina Hurricanes": Color('{hibgblue}{black}Carolina Hurricanes{/black}{/hibgblue}'), #
-    "Columbus Blue Jackets": Color('{hibgblue}{hired}Columbus Blue Jackets{/hired}{/hibgblue}'), #
-    "New Jersey Devils": Color('{hibgwhite}{hired}New Jersey Devils{/hired}{/hibgwhite}'), #
-    "New York Islanders": Color('{bgred}{white}New York Islanders{/white}{/bgred}'), #
+    "New York Rangers": Color('{hibgblue}{hired}New York Rangers{/hired}{/hibgblue}'), #
+    "Philadelphia Flyers": Color('{hibggreen}{black}Philadelphia Flyers{/black}{/hibggreen}'),
+    "Pittsburgh Penguins": Color('{bgwhite}{black}Pittsburgh Penguins{/black}{/bgwhite}'),
+    "Washington Capitals": Color('{bgblue}{hiyellow}Washington Capitals{/hiyellow}{/bgblue}'),
 
-    "New York Rangers": Color('{hibgblack}{hiwhite}New York Rangers{/hiwhite}{/hibgblack}'), #
-    "Philadelphia Flyers": Color('{hibggreen}{black}Philadelphia Flyers{/black}{/hibggreen}'), #
-    "Pittsburgh Penguins": Color('{bgwhite}{black}Pittsburgh Penguins{/black}{/bgwhite}'), #
-    "Washington Capitals": Color('{bgblue}{hiyellow}Washington Capitals{/hiyellow}{/bgblue}'), #
-
-    "Chicago Blackhawks": Color('{bgred}{hiblue}Chicago Blackhawks{/hiblue}{/bgred}'), #
-    "Colorado Avalanche": Color('{bgred}{black}Colorado Avalanche{/black}{/bgred}'), # 
-    "Dallas Stars": Color('{bgyellow}{white}Dallas Stars{/white}{/bgyellow}'), # 
-    "Minnesota Wild": Color('{bgwhite}{hired}Minnesota Wild{/hired}{/bgwhite}'), #
+    "Chicago Blackhawks": Color('{bgred}{hiblue}Chicago Blackhawks{/hiblue}{/bgred}'),
+    "Colorado Avalanche": Color('{bgred}{black}Colorado Avalanche{/black}{/bgred}'),
+    "Dallas Stars": Color('{bgyellow}{white}Dallas Stars{/white}{/bgyellow}'),
+    "Minnesota Wild": Color('{bgwhite}{hired}Minnesota Wild{/hired}{/bgwhite}'),
 
     "Nashville Predators": Color('{hibgblue}{hired}Nashville Predators{/hired}{/hibgblue}'),
     "St. Louis Blues": Color('{hibgwhite}{red}St. Louis Blues{/red}{/hibgwhite}'),
@@ -80,7 +81,41 @@ team_color = {
 
     "San Jose Sharks": Color('{bgwhite}{hired}San Jose Sharks{/hired}{/bgwhite}'),
     "Vancouver Canucks": Color('{hibgblue}{yellow}Vancouver Canucks{/yellow}{/hibgblue}'),
-    "Vegas Golden Knights": Color('{hibgblue}{yellow}Vegas Golden Knights{/yellow}{/hibgblue}')
+    "Vegas Golden Knights": Color('{hibgblue}{yellow}Vegas Golden Knights{/yellow}{/hibgblue}'),
+
+    # NFL
+    'PHI': Color('{bggreen}{hiwhite}PHI 🦅  {/hiwhite}{/bggreen}'),
+    'ATL': ':diamonds: ATL',
+    'BAL': 'BAL',
+    'BUF': 'BUF',
+    'CLE': 'CLE',
+    'PIT': 'PIT',
+    'IND': 'IND',
+    'CIN': 'CIN',
+    'MIA': ':dolphin: MIA',
+    'TEN': 'TEN',
+    'MIN': Color('{hibgwhite}{yellow}MIN 😈  {/yellow}{/hibgwhite}'),
+    'SF': Color('{bgwhite}{hired}SF 🧔  {/hired}{/bgwhite}'),
+    'NE': 'NE',
+    'HOU': 'HOU',
+    'NO': 'NO',
+    'TB': ':skull_and_crossbones: TB',
+    'NYG': 'NYG',
+    'JAX': 'JAX',
+    'LAC': Color('{bgblue}{hiyellow}LAC ⚡  {/hiyellow}{/bgblue}'),
+    'KC': 'KC',
+    'ARI': Color('{hibgred}{black}ARI 🐤  {/black}{/hibgred}'),
+    'WAS': ':bird: WAS',
+    'CAR': 'CAR',
+    'DAL': 'DAL',
+    'DEN': 'DEN',
+    'SEA': Color('{bgblue}{higreen}LAC 🦅  {/higreen}{/bgblue}'),
+    'GB': 'GB',
+    'CHI': 'CHI',
+    'DET': ':lion_face: DET',
+    'NYJ': 'NYJ',
+    'OAK': Color('{bgblack}{hiwhite}OAK ☠  {/hiwhite}{/bgblack}'),
+    'LA': Color('{bgblue}{yellow}LA 🐏  {/yellow}{/bgblue}')
 }
 
 
@@ -91,8 +126,12 @@ def _colorize_team_name(games):
     return games
 
 
-def display_table(games, color=True):
-    games_without_id = [g[1:] for g in games]
+def display_table(games, id=True, color=True):
+    if id:
+        games_without_id = [g[1:] for g in games]
+    else:
+        games_without_id = games
+
     if color:
         games_without_id = _colorize_team_name(games_without_id)
     return tabulate(games_without_id, headers=['away', '', 'home', ''], tablefmt="fancy_grid")

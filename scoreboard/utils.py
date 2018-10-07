@@ -5,6 +5,7 @@ import datetime
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
+from xml.etree import ElementTree as ET
 import time
 import json
 
@@ -41,6 +42,35 @@ def get_game_data(url, game_state):
     """
     response = _get_url(url)
     return _convert_schedule_json(json.loads(response.text), game_state)
+
+
+def _convert_nfl_xml(data_xml):
+    """
+    return list
+    """
+    root  = ET.fromstring(data_xml.content)
+    xml_games = []
+
+    for child in root.iter('g'):
+        xml_games.append(child.attrib)
+
+    if not xml_games:
+        return []
+
+    games = []
+    for g in xml_games:
+        if g['q'] in ('1', '2', '3', '4'):
+            games.append([g['v'], g['vs'], g['h'], g['hs']])
+
+    return games
+
+
+def get_nfl_game_data(url):
+    """
+    return list
+    """
+    response = _get_url(url)
+    return _convert_nfl_xml(response)
 
 
 def _convert_content_json(data_json):
